@@ -7,5 +7,5 @@ const app = createApp(App).mount('#app')
 
 // From Creating an Application
 app.config.errorHandler = (err) => {
-    /* handle error */
+  /* handle error */
 }
