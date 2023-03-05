@@ -1,6 +1,8 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import CompositionShowcase from './components/CompositionShowcase.vue';
+import OptionShowcase from './components/OptionShowcase.vue'
 </script>
 
 <template>
@@ -9,11 +11,15 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+  </div>
+</header>
 
   <main>
-    <TheWelcome />
+    <OptionShowcase />
+    <CompositionShowcase />
+    <!-- 
+        <TheWelcome />
+        -->
   </main>
 </template>
 
