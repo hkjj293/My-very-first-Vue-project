@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import TemplateSyntax from './CompositionLessons/TemplateSyntax.vue';
+import ReactivityFundamentals from './CompositionLessons/ReactivityFundamentals.vue';
 // reactive state
 const count = ref(0)
 
@@ -18,6 +19,9 @@ onMounted(() => {
 <template>
     <button @click="increment">Count is: {{ count }}</button>
     <TemplateSyntax />
+    <hr />
+    <ReactivityFundamentals />
+    <hr />
 </template>
 
 <style scoped>
