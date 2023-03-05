@@ -2,8 +2,9 @@
 // <script setup> implicitly expose setup() in SFCs. 
 // More info in https://vuejs.org/guide/essentials/reactivity-fundamentals.html
 // Declaring Reactive state
-import { reactive } from 'vue'
-import { nextTick } from 'vue'
+import { reactive } from 'vue';
+import { nextTick } from 'vue';
+import { ref } from 'vue';
 
 const state = reactive({ count: 0 });
 
@@ -18,6 +19,17 @@ const proxy = reactive(raw);
 const proxy2 = reactive({});
 const raw2 = {};
 proxy2.nested = raw2;
+
+const cc = ref(0);
+
+const cd = ref(0);
+// Unwrap automatically (and st become the proxy of cd, modifying st changes cd)
+const st = reactive({
+    cd
+});
+
+const books = reactive([ref('Vue 3 Guide')]);
+const map = reactive(new Map([['count', ref(0)]]));
 
 function increment() {
     state.count++;
@@ -38,6 +50,14 @@ function mutateDeeply() {
     obj.nested.count++;
     obj.arr.push('baz');
 };
+
+function ccValue() {
+    return "cc: " + JSON.stringify(cc);
+}
+
+function ccDotValue() {
+    return "cc.value: " + cc.value;
+}
 </script>
 
 <template>
@@ -73,6 +93,28 @@ function mutateDeeply() {
     {{ "proxy2.nested === raw2? " + (proxy2.nested === raw2).toString() }}
     <br />
     {{ "-- That means nested objects in proxy are also proxy ==> becoz of deep reactivity" }}
+    {{ "-- When accessing a proxy, you only get a deep copy version of object" }}
+    <br />
+    <!-- Reactive Variables with ref() -->
+    {{ ccValue() }}
+    <br />
+    {{ ccDotValue() }}
+    <br />
+    <!-- Ref Unwrapping in Templates (but the object must be in top level)-->
+    {{ "Count Value -> " + cc }}
+    <br />
+    {{ "Count Value -> " + cc.value }}
+    <br />
+    <!-- Ref Unwrapping in Reactive Objects ==> cc is connected to proxy st  (term: connected/ diconnected)-->
+    {{ "Count Value -> " + st.cd++ }}
+    <br />
+    {{ "Count Value -> " + cd }}
+    <br />
+    <!-- Ref Unwrapping in Arrays and Collections (No unwrapping for array/collections) -->
+    {{ books[0].value }}
+    <br />
+    {{ map.get('count').value }}
+    <br />
 </template>
 
 <style scoped></style>
