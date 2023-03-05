@@ -18,10 +18,11 @@ onMounted(() => {
 
 <template>
     <button @click="increment">Count is: {{ count }}</button>
+    <hr>
     <TemplateSyntax />
-    <hr />
+    <hr>
     <ReactivityFundamentals />
-    <hr />
+    <hr>
 </template>
 
 <style scoped>
