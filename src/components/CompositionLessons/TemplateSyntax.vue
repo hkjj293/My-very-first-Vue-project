@@ -10,8 +10,13 @@ const objectOfAttrs = {
     id: 'container',
     class: 'wrapper'
 }
+var seen = true;
+const href = "https://chrishui.cc";
 function add(a, b) {
     return a + b;
+}
+function doSomething() {
+    seen = !seen;
 }
 </script>
 
@@ -20,7 +25,8 @@ function add(a, b) {
     <!-- Text Interpolation -->
     <span>Message: {{ msg }}</span>
     <!-- Raw HTML -->
-    <p>Text Interp: {{ rawHtml }}<br />vs<br /> Raw HTML v-html: <span v-html="rawHtml"></span></p>
+    <p>Text Interp: {{ rawHtml }}</P>
+    <p>Raw HTML v-html: <span v-html="rawHtml"></span></p>
     <!-- Attribute Bindings -->
     <div v-bind:id="dynamicId">dynamicId</div>
     <div :id="dynamicId">dynamicId</div> <!-- shorthand -->
@@ -29,11 +35,21 @@ function add(a, b) {
     <!-- Dynamic Binding multiple sttribute -->
     <div v-bind="objectOfAttrs">objectOfAttrs</div>
     <!-- Use js expressions (not statments)-->
-    {{ add(1, 1) }}
+    {{ add(1, 1) + " (Example of js expression)" }}
+    <!-- Directives -->
+    <p v-if="seen">Now you see me (Directives)</p>
+    <!-- Arguments href is the argument-->
+    <a v-bind:href="url">Link</a>
+    <a v-on:click="doSomething"> ... </a>
+    <a @click="doSomething"> ... </a>
 </template>
 
 <style scoped>
 button {
     font-weight: bold;
+}
+
+#button {
+    color: pink;
 }
 </style>
