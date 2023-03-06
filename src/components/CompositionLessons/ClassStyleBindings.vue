@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed,reactive } from 'vue'
+import Example from './Example.vue';
 
 const isActive = true
 const isActive2 = ref(true)
@@ -25,6 +26,9 @@ const activeClass2 = reactive({status:'text-danger'});
     <div :class="comp">Computed {{ hasError2 }}</div>
     <!-- Binding to Arrays -->
     <div :class="[activeClass,activeClass2.status]">OK</div>
+    <div :class="[isActive? activeClass:'',activeClass2.status]">OK</div>
+    <!-- With components -->
+    <Example :class="child"></Example>
 </template>
 
 <style scoped>
