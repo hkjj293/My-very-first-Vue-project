@@ -52,7 +52,7 @@ function onSubmit(event) {
         <!-- Equal to <a v-bind="attr">Link</a>  ;   attr = {href: url} -->
         <a href="" v-on:click="doSomething"> v-on:click </a><br />
         <a href="" @click="doSomething"> @click </a><br /> <!-- shorthand -->
-        <!-- Dynamic Arguments -->
+        <!-- Dynamic Arguments ==> js expressions are inside []-->
         <a v-bind:[attributeName]="url"> v-bind:[attributeName] </a><br />
         <a href="" v-on:[eventName]="doSomething"> v-on:[eventName] </a><br />
         <!-- DA constraints -->
