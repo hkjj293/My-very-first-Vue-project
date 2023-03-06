@@ -15,12 +15,14 @@ const ohno = () => {
 </script>
 
 <template>
-    <h1 v-if="awesome">Vue is awesome!</h1>
-    <h1 v-else-if="count > 10">Null</h1>
-    <h1 v-else>Vue is...</h1>
-    <h2>{{ count }}</h2>
+    <h2>Conditional Rendering</h2>
+    <br />
+    <h3 v-if="awesome">Vue is awesome!</h3>
+    <h3 v-else-if="count > 10">Null</h3>
+    <h3 v-else>Vue is...</h3>
+    <h4>{{ count }}</h4>
     <button @click="ohno">Toggle</button>
-    <h1 v-show="showMe">Show me</h1>
+    <h3 v-show="showMe">Show me</h3>
 </template>
 
 <style scoped></style>
