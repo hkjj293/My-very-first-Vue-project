@@ -4,6 +4,7 @@ import TemplateSyntax from './CompositionLessons/TemplateSyntax.vue'
 import ReactivityFundamentals from './CompositionLessons/ReactivityFundamentals.vue'
 import ComputedProperties from './CompositionLessons/ComputedProperties.vue'
 import ClassStyleBindings from './CompositionLessons/ClassStyleBindings.vue'
+import ConditionalRenderingVue from './CompositionLessons/ConditionalRendering.vue'
 // reactive state
 const count = ref(0)
 
@@ -26,8 +27,10 @@ onMounted(() => {
   <ReactivityFundamentals />
   <hr />
   <ComputedProperties />
-  <hr/>
-  <ClassStyleBindings/>
+  <hr />
+  <ClassStyleBindings />
+  <hr />
+  <ConditionalRenderingVue />
 </template>
 
 <style scoped>
