@@ -10,6 +10,14 @@ const reactiveClass = {active: isActive, Button: isActive2};
 const comp = computed(()=>{return ({active: isActive,'text-danger':hasError2.value,Button: isActive2})});
 const activeClass = ref('active');
 const activeClass2 = reactive({status:'text-danger'});
+const styleObject = reactive({
+  color: 'red',
+  fontSize: '13px'
+})
+const styleObject2 = reactive({
+  color: 'black',
+  fontSize: '26px'
+})
 </script>
 
 <template>
@@ -28,7 +36,13 @@ const activeClass2 = reactive({status:'text-danger'});
     <div :class="[activeClass,activeClass2.status]">OK</div>
     <div :class="[isActive? activeClass:'',activeClass2.status]">OK</div>
     <!-- With components -->
-    <Example :class="child"></Example>
+    <Example class="child p"/>
+    <!-- Binding inline style -->
+    <div :style="{color: 'rgb(50,20,10)', textAlign: 'center', fontSize: 48+'px'}">Inline Style</div>
+    <div :style="styleObject">StyledObject</div>
+    <div :style="[styleObject,styleObject2]">arrays of styles</div>
+    <div :style="{display: ['-webkit-box','flex']}">Multiple fallback options (last value which the browser support)</div>
+    <div :style="{fontFamily: ['system-ui','comics sans']}">Multiple fallback options (last supported value if not comics sans {{ '=>>' }} system-ui)</div>
 </template>
 
 <style scoped>
@@ -46,5 +60,9 @@ const activeClass2 = reactive({status:'text-danger'});
 
 .text-danger{
     color: cyan;
+}
+
+.child{
+    color: blue;
 }
 </style>

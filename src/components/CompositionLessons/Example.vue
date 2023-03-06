@@ -4,8 +4,9 @@
 </script>
 
 <template>
-    <p class="parent"><b>Example</b></p>
-    <br/>
+    <p class="a b">
+        <b>Example</b>
+    </p>
 </template>
 
 <style scoped>
