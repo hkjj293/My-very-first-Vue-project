@@ -1,8 +1,13 @@
-<script setup>
+<script>
 import { reactive } from 'vue'
 import { computed } from 'vue'
 import { ref } from 'vue'
-const text = ref('');
+export default {
+    setup() {
+        const text = ref('');
+        return { text }
+    }
+}
 </script>
 
 <template>
