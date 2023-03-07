@@ -6,6 +6,7 @@ import ComputedProperties from './CompositionLessons/ComputedProperties.vue'
 import ClassStyleBindings from './CompositionLessons/ClassStyleBindings.vue'
 import ConditionalRenderingVue from './CompositionLessons/ConditionalRendering.vue'
 import ListRendering from './CompositionLessons/ListRendering.vue'
+import EventHandling from './CompositionLessons/EventHandling.vue'
 // reactive state
 const count = ref(0)
 
@@ -34,6 +35,8 @@ onMounted(() => {
   <ConditionalRenderingVue />
   <hr />
   <ListRendering />
+  <hr />
+  <EventHandling />
 </template>
 
 <style scoped>
