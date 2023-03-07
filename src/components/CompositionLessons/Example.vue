@@ -1,16 +1,17 @@
 <script setup>
-    import {ref,reactive, computed} from 'vue';
-    const exp = ref(true);
+import { ref, reactive, computed } from 'vue';
+const exp = ref(true);
+const input = defineProps(['input']);
 </script>
 
 <template>
-    <p class="a b">
-        <b>Example</b>
+    <p v-if="exp" class="a b">
+        <b>Example {{ input }}</b>
     </p>
 </template>
 
 <style scoped>
-.child{
+.child {
     color: blue;
 }
 </style>
