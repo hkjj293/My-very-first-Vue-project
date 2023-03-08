@@ -13,6 +13,7 @@ defineExpose({
     a,
     b
 });
+const c = ref(null);
 onMounted(() => {
     //input.value will be the refernce of the DOM the ref pointing from
     input.value.focus();
@@ -20,6 +21,7 @@ onMounted(() => {
         buttons.value[3].focus();
     }
     console.log(a.value);
+    console.log(c.value.focus());
 })
 
 </script>
@@ -34,14 +36,16 @@ onMounted(() => {
     <input ref="input" />
     <!-- Ref on v-for -->
     <button v-for="n in 10" ref="buttons">{{ n }}</button>
-    <!-- Ref on Function -->
-
+    <!-- Ref on Function == passing the element as param -->
+    <input :ref="(el) => { c = el; }">
+    {{ c }}
     <!-- Ref on Components -->
     <div>
         <Example ref="a" input="y" />
         <Example ref="b" input="p" />
         {{ a }}{{ b }}
     </div>
+    <slot />
 </template>
 
 <style scoped></style>

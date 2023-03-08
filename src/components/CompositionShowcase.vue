@@ -36,6 +36,8 @@ onMounted(() => {
   <Watchers />
   <hr />
   <TemplateRef />
+  <hr />
+  <ComponentBasics />
 </template>
 
 <style scoped>

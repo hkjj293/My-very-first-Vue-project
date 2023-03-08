@@ -8,6 +8,7 @@ import EventHandling from './CompositionLessons/EventHandling.vue'
 import FormBinding from './CompositionLessons/FormBinding.vue'
 import Watchers from './CompositionLessons/Watchers.vue'
 import TemplateRef from './CompositionLessons/TemplateRef.vue';
+import ComponentBasics from './CompositionLessons/ComponentBasics.vue';
 
 export {
     TemplateSyntax,
@@ -20,4 +21,5 @@ export {
     FormBinding,
     Watchers,
     TemplateRef,
+    ComponentBasics,
 }
