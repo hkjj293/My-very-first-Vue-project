@@ -30,6 +30,11 @@ const hi = ref("");
             KO
         </template>
     </component>
+    <component :is="Example">
+        <template #end>
+            KO
+        </template>
+    </component>
 </template>
 
 <style scoped></style>
