@@ -14,7 +14,12 @@ const onClick = () => {
     <br />
     <div @click="onClick">Click me</div>
     <div v-if="clickToggle">Now you see me</div>
+    <!-- Ten modifiers for @ event directives -->
+    <!-- Including prevent, lazy, once, {keys}, middle, left, right -->
     <div @click="(event) => { currentEvent.event = event }">CurrEvent {{ JSON.stringify(currentEvent.event) }}</div>
+    <!-- For keys, it have to be focued to trigger the key events -->
+    <button @keydown.a="onClick">Key down</button>
+    <button @keydown.w.exact="onClick">Key down exac</button>
 </template>
 
 <style scoped></style>

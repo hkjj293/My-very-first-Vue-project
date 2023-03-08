@@ -40,6 +40,8 @@ onMounted(() => {
   <EventHandling />
   <hr />
   <FormBinding />
+  <hr />
+  <Watchers />
 </template>
 
 <style scoped>

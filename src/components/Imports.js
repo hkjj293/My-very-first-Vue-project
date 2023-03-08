@@ -6,6 +6,7 @@ import ConditionalRenderingVue from './CompositionLessons/ConditionalRendering.v
 import ListRendering from './CompositionLessons/ListRendering.vue'
 import EventHandling from './CompositionLessons/EventHandling.vue'
 import FormBinding from './CompositionLessons/FormBinding.vue'
+import Watchers from './CompositionLessons/Watchers.vue'
 
 export {
     TemplateSyntax,
@@ -16,4 +17,5 @@ export {
     ListRendering,
     EventHandling,
     FormBinding,
+    Watchers,
 }
